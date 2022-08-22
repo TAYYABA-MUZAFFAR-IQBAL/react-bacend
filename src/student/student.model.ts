@@ -13,5 +13,9 @@ export class Student {
   gender: string;
   @Prop()
   marks: number;
+  @Prop()
+  email: string;
+  @Prop()
+  password: string;
 }
 export const StudentSchema = SchemaFactory.createForClass(Student);

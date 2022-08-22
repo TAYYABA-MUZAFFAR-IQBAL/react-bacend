@@ -24,6 +24,8 @@ export class StudentController {
     @Body() createStudentDto: CreateStudentDto,
   ) {
     try {
+      console.log(createStudentDto);
+
       const newStudent = await this.studentService.createStudent(
         createStudentDto,
       );
@@ -38,6 +40,10 @@ export class StudentController {
         error: 'Bad Request',
       });
     }
+  }
+  @Post('login')
+  login(@Body() user): Promise<{ token: string }> {
+    return this.studentService.login(user);
   }
   @Put('/:id')
   async updateStudent(

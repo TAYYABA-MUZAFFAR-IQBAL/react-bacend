@@ -5,4 +5,6 @@ export interface IStudent extends Document {
   readonly class: number;
   readonly gender: string;
   readonly marks: number;
+  readonly email: string;
+  readonly password: string;
 }
