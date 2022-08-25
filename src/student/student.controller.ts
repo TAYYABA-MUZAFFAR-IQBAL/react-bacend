@@ -24,20 +24,20 @@ export class StudentController {
     @Body() createStudentDto: CreateStudentDto,
   ) {
     try {
-      console.log(createStudentDto);
-
       const newStudent = await this.studentService.createStudent(
         createStudentDto,
       );
       return response.status(HttpStatus.CREATED).json({
         message: 'Student has been created successfully',
         newStudent,
+        
       });
+
     } catch (err) {
-      return response.status(HttpStatus.BAD_REQUEST).json({
+      return response.status(HttpStatus.CONFLICT).json({
         statusCode: 400,
         message: 'Error: Student not created!',
-        error: 'Bad Request',
+        error: 'EMAIL Already Exsist',
       });
     }
   }

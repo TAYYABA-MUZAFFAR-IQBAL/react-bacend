@@ -37,10 +37,6 @@ export class StudentService {
 
     const registerBody = {
       name: body.name,
-      roleNumber: body.roleNumber,
-      class: body.class,
-      gender: body.gender,
-      marks: body.marks,
       email: body.email,
       password: hashedPassword,
     };
